@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from user.views import home
+from post.views import timeline
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user/', include('user.urls')),
-    path('', home)
+    path('post/', include('post.urls')),
+    path('', timeline),
 ]
